@@ -2,6 +2,7 @@ package com.example.springsecurityjwt.controller;
 
 import com.example.springsecurityjwt.models.AuthenticationRequest;
 import com.example.springsecurityjwt.models.AuthenticationResponse;
+import com.example.springsecurityjwt.models.ResultDTO;
 import com.example.springsecurityjwt.security.MyUserDetailsService;
 import com.example.springsecurityjwt.utils.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @GetMapping("/hello")
-    public String show() {
-        return "Hello world!!";
+    public ResultDTO show(){
+        return new ResultDTO("thangtv", 23, true);
     }
 
 }
